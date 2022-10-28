@@ -250,6 +250,10 @@ Search for `extensions.zotfile` to see a list of the hidden zotfile options. Her
 
     Custom, regular expression-based replacements in extracted annotations. This can be useful because some pdfs contain 'broken' characters. For example, [{"regex":" ?\u00f0", "replacement": " ("}] replaces the unicode character ð with ( to fix a problem in pdfs from a certain publisher. In this case, ð is a problem with the pdf and not with zotfile's extraction. The hidden option can be used to fix it.
 
+-   `.initials_delimiter`
+
+     Custom string to insert between initials or between lastname and initials, when author/editor wildcards using initials are used. The default is blank. For example, specifying "," as the delimiter will make %F return "Ada,L" instead of "AdaL", and %I return "A,L" instead of "AL". Please note that using certain characters might not be compatible with your filesystem and/or cloud storage. 
+
 ### REPORTING A BUG
 
 You can report bugs on the [Zotfile thread](http://forums.zotero.org/discussion/5301/6/zotfile-zotero-plugin-to-rename-move-and-attach-pdfs-send-them-to-ipad-extract-pdf-annotations/) in the Zotero forum. Please provide information about about your system (Windows, Mac OS, Linux etc) as well as your Zotfile, Zotero and Firefox version. Also make sure that you can reproduce the bug and describe the steps as closely as possible. In addition, any information from the Error Console are very helpful. You can check the Error Console in Zotero by going to 'Help -> Report Errors to Zotero...' (do not follow the steps, just look at report content). For zotfile bugs,  the 'Source File' should be something like `chrome://zotfile/content/...` (most likely zotfile.js). You can also clear the console, execute the actions that caused the problem and then check again. If I ask you to provide a Report ID, follow the instructions [here](http://www.zotero.org/support/reporting_bugs).

@@ -153,20 +153,21 @@ Zotero.ZotFile.Wildcards = new function() {
         var max_authors = (Zotero.ZotFile.getPref("truncate_authors")) ? Zotero.ZotFile.getPref("max_authors") : 500;
         if (numauthors <= max_authors) add_etal = false;
         else numauthors = Zotero.ZotFile.getPref("number_truncate_authors");
-        var delimiter = Zotero.ZotFile.getPref("authors_delimiter");
+        var authorsDelimiter  = Zotero.ZotFile.getPref("authors_delimiter");
+        var initialsDelimiter = Zotero.ZotFile.getPref("initials_delimiter");
         var j = 0;
         for (i = 0; i < creators.length; ++i) {
             if (j < numauthors && creatorTypeIDs.indexOf(creators[i].creatorTypeID) != -1) {
-                if (author !== "") author += delimiter + creators[i].lastName;
+                if (author !== "") author += authorsDelimiter  + creators[i].lastName;
                 if (author === "") author = creators[i].lastName;
-                var lastf =  creators[i].lastName + creators[i].firstName.substr(0, 1).toUpperCase();
-                if (author_lastf !== "") author_lastf += delimiter + lastf;
+                var lastf =  creators[i].lastName + initialsDelimiter + creators[i].firstName.substr(0, 1).toUpperCase();
+                if (author_lastf !== "") author_lastf += authorsDelimiter  + lastf;
                 if (author_lastf === "") author_lastf = lastf;
-                var initials = creators[i].firstName.substr(0, 1).toUpperCase() + creators[i].lastName.substr(0, 1).toUpperCase()
-                if (author_initials !== "") author_initials += delimiter + initials;
+                var initials = creators[i].firstName.substr(0, 1).toUpperCase() + initialsDelimiter + creators[i].lastName.substr(0, 1).toUpperCase()
+                if (author_initials !== "") author_initials += authorsDelimiter  + initials;
                 if (author_initials === "") author_initials = initials;
         var lastg = creators[i].lastName + ", " + creators[i].firstName;
-                if (author_lastg !== "") author_lastg += delimiter + lastg;
+                if (author_lastg !== "") author_lastg += authorsDelimiter  + lastg;
                 if (author_lastg === "") author_lastg = lastg;
                 j=j+1;
             }
@@ -197,13 +198,13 @@ Zotero.ZotFile.Wildcards = new function() {
         var j = 0;
         for (i = 0; i < creators.length; ++i) {
             if (j < numeditors && editorType.indexOf(creators[i].creatorTypeID) != -1) {
-                if (editor !== "") editor += delimiter + creators[i].lastName;
+                if (editor !== "") editor += authorsDelimiter  + creators[i].lastName;
                 if (editor === "") editor = creators[i].lastName;
-                var lastfe =  creators[i].lastName + creators[i].firstName.substr(0, 1).toUpperCase();
-                if (editor_lastf !== "") editor_lastf += delimiter + lastf;
+                var lastfe =  creators[i].lastName + initialsDelimiter + creators[i].firstName.substr(0, 1).toUpperCase();
+                if (editor_lastf !== "") editor_lastf += authorsDelimiter  + lastf;
                 if (editor_lastf === "") editor_lastf = lastf;
-                var initials = creators[i].firstName.substr(0, 1).toUpperCase() + creators[i].lastName.substr(0, 1).toUpperCase()
-                if (editor_initials !== "") editor_initials += delimiter + initials;
+                var initials = creators[i].firstName.substr(0, 1).toUpperCase() + initialsDelimiter + creators[i].lastName.substr(0, 1).toUpperCase()
+                if (editor_initials !== "") editor_initials += authorsDelimiter  + initials;
                 if (editor_initials === "") editor_initials = initials;
                 j=j+1;
             }

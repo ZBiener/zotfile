@@ -18,6 +18,7 @@ pref("extensions.zotfile.number_truncate_authors", 1);
 pref("extensions.zotfile.add_etal", true);
 pref("extensions.zotfile.etal", " et al");
 pref("extensions.zotfile.authors_delimiter", "_");
+pref("extensions.zotfile.initials_delimiter", "");
 pref("extensions.zotfile.removeDiacritics", false);
 pref("extensions.zotfile.removePeriods", false);
 pref("extensions.zotfile.confirmation", true);
