@@ -173,8 +173,8 @@ Zotero.ZotFile.Wildcards = new function() {
         var lastAuthor = "", lastAuthor_lastf= "", lastAuthor_initials= "", lastAuthor_lastInitial = "";
         if (creators.length > 0) {
             lastAuthor = creators[creators.length - 1].lastName;
-            lastAuthor_lastf = creators[creators.length - 1].lastName + creators[creators.length - 1].firstName.substr(0, 1).toUpperCase();
-            lastAuthor_initials = creators[creators.length - 1].firstName.substr(0, 1).toUpperCase() + creators[creators.length - 1].lastName.substr(0, 1).toUpperCase();
+            lastAuthor_lastf = creators[creators.length - 1].lastName + initialsDelimiter + creators[creators.length - 1].firstName.substr(0, 1).toUpperCase();
+            lastAuthor_initials = creators[creators.length - 1].firstName.substr(0, 1).toUpperCase() + initialsDelimiter + creators[creators.length - 1].lastName.substr(0, 1).toUpperCase();
             lastAuthor_lastInitial = creators[creators.length - 1].lastName.substr(0, 1).toUpperCase();
         }
         // get creator and create editors string
